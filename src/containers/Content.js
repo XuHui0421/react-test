@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import Proptypes from "prop-types";
+import PropTypes from "prop-types";
 import ThemeSwitch from "./ThemeSwitch";
-import { connect } from "./react-redux";
+import { connect } from "react-redux";
+
 class Content extends Component {
-  static contextTypes = {
-    store: Proptypes.object
+  static propTypes = {
+    themeColor: PropTypes.string
   };
+
   render() {
     return (
       <div>
@@ -15,10 +17,10 @@ class Content extends Component {
     );
   }
 }
+
 const mapStateToProps = state => {
   return {
     themeColor: state.themeColor
   };
 };
-Content = connect(mapStateToProps)(Content);
-export default Content;
+export default connect(mapStateToProps)(Content);

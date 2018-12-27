@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { connect } from "./react-redux";
 
 class Header extends Component {
   static contextTypes = {
@@ -15,6 +14,5 @@ const mapStateToProps = state => {
     themeColor: state.themeColor
   };
 };
-Header = connect(mapStateToProps)(Header);
 
 export default Header;
